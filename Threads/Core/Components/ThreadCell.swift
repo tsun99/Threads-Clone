@@ -76,26 +76,22 @@ struct ThreadCell: View {
                     Button {
                         
                     } label: {
-                        
-                        Image(systemName: "paperplane")
+                        Image(systemName: "heart")
                     }
                     Button {
                         
                     } label: {
-                        
-                        Image(systemName: "arrow.2.squarepath")
-                    }
-                    Button {
-                        
-                    } label: {
-                        
                         Image(systemName: "bubble.right")
                     }
                     Button {
                         
                     } label: {
+                        Image(systemName: "arrow.2.squarepath")
+                    }
+                    Button {
                         
-                        Image(systemName: "heart")
+                    } label: {
+                        Image(systemName: "paperplane")
                     }
                     
                 }
