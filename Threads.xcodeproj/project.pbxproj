@@ -14,6 +14,7 @@
 		29A273FB2A5C0A2B0001CDBD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273FA2A5C0A2B0001CDBD /* MainTabView.swift */; };
 		29A273FD2A5C0D300001CDBD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273FC2A5C0D300001CDBD /* ProfileView.swift */; };
 		29A9BE9A2A61C3A500F82261 /* ThreadFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9BE992A61C3A500F82261 /* ThreadFilterViewModel.swift */; };
+		29A9BE9C2A61CFEF00F82261 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9BE9B2A61CFEF00F82261 /* ThreadCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		29A273FA2A5C0A2B0001CDBD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		29A273FC2A5C0D300001CDBD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		29A9BE992A61C3A500F82261 /* ThreadFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadFilterViewModel.swift; sourceTree = "<group>"; };
+		29A9BE9B2A61CFEF00F82261 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		29A9BE962A61C27700F82261 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				29A9BE9B2A61CFEF00F82261 /* ThreadCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				29A9BE9A2A61C3A500F82261 /* ThreadFilterViewModel.swift in Sources */,
 				29A273FD2A5C0D300001CDBD /* ProfileView.swift in Sources */,
 				29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */,
+				29A9BE9C2A61CFEF00F82261 /* ThreadCell.swift in Sources */,
 				29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */,
 				29A273FB2A5C0A2B0001CDBD /* MainTabView.swift in Sources */,
 			);
