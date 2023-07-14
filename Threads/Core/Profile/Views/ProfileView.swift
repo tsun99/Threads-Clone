@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State private var selectedFilter: ThreadFilterViewModel = .threads
+    
+    @Namespace var animation
+    
     var body: some View {
-        VStack {
+        ScrollView {
             // Header
             VStack(alignment: .leading) {
                 HStack {
@@ -45,10 +50,11 @@ struct ProfileView: View {
                     }
                     Spacer()
                     
-                    Image(systemName: "person.circle")
+                    Image("Harry")
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 50)
+                        .scaledToFill()
+                        .frame(width: 80, height: 80)
+                        .clipShape(Circle())
                 }
                 .padding(.bottom, 10)
                 
@@ -70,10 +76,37 @@ struct ProfileView: View {
                 .overlay(RoundedRectangle(cornerRadius: 6)
                     .stroke(Color.secondary, lineWidth: 1))
                 
+                HStack {
+                    ForEach(ThreadFilterViewModel.allCases, id: \.rawValue) { item in
+                        
+                        VStack {
+                            Text(item.title)
+                                .font(.subheadline)
+                                .fontWeight(selectedFilter == item ? .semibold : .regular)
+                                .foregroundColor(selectedFilter == item ? .primary : .secondary)
+                            
+                            
+                                Capsule()
+                                .foregroundColor(selectedFilter == item ? .primary : .secondary)
+                                .frame(height: 3)
+
+                        }
+                        .onTapGesture {
+                            withAnimation(.easeInOut) {
+                                selectedFilter = item
+                            }
+                        }
+                    }
+                }
+                .overlay(Divider().offset(x: 0, y: 17))
+                
             }
             .padding()
             
-            //Threads
+            LazyVStack {
+                //Threads
+                
+            }
         }
     }
 }
