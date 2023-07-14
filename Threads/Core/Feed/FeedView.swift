@@ -11,20 +11,25 @@ struct FeedView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 48) {
-                    HStack {
-                        Image("ThreadsLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40)
-                            .foregroundColor(.primary)
-                    }
+                Image("ThreadsLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40)
+                    .foregroundColor(.primary)
+                    .padding(.bottom)
+                
+                LazyVStack() {
+                    
                     ForEach(0...10, id: \.self) { thread in
                         ThreadCell()
+                            .padding(.bottom, 38)
+                        
+                        Divider()
                     }
                 }
             }
             .padding(.top, 1)
+          
         }
     }
 }

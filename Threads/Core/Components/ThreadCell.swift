@@ -49,7 +49,7 @@ struct ThreadCell: View {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
                     Text("User Name")
-                        .bold()
+                        .font(.headline)
                     
                     Spacer()
                     
@@ -66,6 +66,7 @@ struct ThreadCell: View {
                 
                 
                 Text("This is the thread text. it might be long it might not be long. So if I'm writing more text ")
+                  
                 
                 Image("Harry")
                     .resizable()
