@@ -17,44 +17,48 @@ struct SearchView: View {
             ScrollView {
                 LazyVStack {
                     
-                    ForEach(0...15, id: \.self) { user in
+                    ForEach(User.MOCK_USERS) { user in
                         VStack {
-                            HStack() {
-                                Image("Harry")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
+                            NavigationLink(value: user) {
                                 
-                                VStack(alignment: .leading) {
+                                HStack() {
+                                    Image(user.profileImageUrl ?? "")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 50, height: 50)
+                                        .clipShape(Circle())
                                     
-                                    Text("HarryP")
-                                        .fontWeight(.semibold)
-                                    
-                                    Text("Harry Potter")
-                                        .foregroundColor(.secondary)
-                                    
-                                }
-                                
-                                
-                                Spacer()
-                                
-                                Button {
-                                    
-                                } label: {
-                                    Text("Follow")
-                                        .foregroundColor(.primary)
-                                        .font(.caption)
-                                        .bold()
-                                        .frame(width: 75, height: 30)
-                                        .overlay (
-                                            RoundedRectangle(cornerRadius: 5)
-                                                .stroke(Color.secondary, lineWidth: 1)
-                                        )
+                                    VStack(alignment: .leading) {
                                         
+                                        Text(user.username)
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.primary)
+                                        
+                                        Text(user.fullname)
+                                            .foregroundColor(.secondary)
+                                        
+                                    }
+                                    
+                                    
+                                    Spacer()
+                                    
+                                    Button {
+                                        // implement follow user functionality
+                                    } label: {
+                                        Text("Follow")
+                                            .foregroundColor(.primary)
+                                            .font(.caption)
+                                            .bold()
+                                            .frame(width: 75, height: 30)
+                                            .overlay (
+                                                RoundedRectangle(cornerRadius: 5)
+                                                    .stroke(Color.secondary, lineWidth: 1)
+                                            )
+                                        
+                                    }
+                                    .padding(.horizontal, 4)
+                                    
                                 }
-                                .padding(.horizontal, 4)
-                                
                             }
                             .padding(.horizontal)
                             
@@ -67,6 +71,9 @@ struct SearchView: View {
                 .padding(.top, 6)
                 .searchable(text: $searchText, prompt: "Search")
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView()
+            })
             .navigationTitle("Search")
         }
     }

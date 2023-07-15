@@ -17,7 +17,7 @@ struct RegistrationView: View {
     @Environment(\.dismiss) var dismiss
     
     private var isDisabled: Bool {
-        return emailField.isEmpty || passwordField.isEmpty || usernameField.isEmpty
+        return emailField.isEmpty || passwordField.isEmpty || usernameField.isEmpty || fullNameField.isEmpty
     }
     
     var body: some View {

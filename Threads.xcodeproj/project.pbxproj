@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		299263462A62FCEF004BF130 /* MainUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263452A62FCEF004BF130 /* MainUserProfileView.swift */; };
 		29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */; };
 		29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273E12A5C05DE0001CDBD /* ContentView.swift */; };
 		29A273E42A5C05E10001CDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A273E32A5C05E10001CDBD /* Assets.xcassets */; };
@@ -20,9 +21,11 @@
 		29A9BEA32A62AC2800F82261 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9BEA22A62AC2800F82261 /* LoginView.swift */; };
 		29A9BEA52A62C26700F82261 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9BEA42A62C26700F82261 /* RegistrationView.swift */; };
 		29A9BEA72A62C8CD00F82261 /* CompleteRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9BEA62A62C8CD00F82261 /* CompleteRegistrationView.swift */; };
+		29A9BEA92A62F55900F82261 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9BEA82A62F55900F82261 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		299263452A62FCEF004BF130 /* MainUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserProfileView.swift; sourceTree = "<group>"; };
 		29A273DC2A5C05DE0001CDBD /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsApp.swift; sourceTree = "<group>"; };
 		29A273E12A5C05DE0001CDBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		29A9BEA22A62AC2800F82261 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		29A9BEA42A62C26700F82261 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		29A9BEA62A62C8CD00F82261 /* CompleteRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegistrationView.swift; sourceTree = "<group>"; };
+		29A9BEA82A62F55900F82261 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		29A273ED2A5C086B0001CDBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				29A9BEA82A62F55900F82261 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				29A273FC2A5C0D300001CDBD /* ProfileView.swift */,
+				299263452A62FCEF004BF130 /* MainUserProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299263462A62FCEF004BF130 /* MainUserProfileView.swift in Sources */,
 				29A9BE9E2A61E35C00F82261 /* FeedView.swift in Sources */,
 				29A9BE9A2A61C3A500F82261 /* ThreadFilterViewModel.swift in Sources */,
 				29A9BEA72A62C8CD00F82261 /* CompleteRegistrationView.swift in Sources */,
@@ -300,6 +307,7 @@
 				29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */,
 				29A9BEA02A62A1AD00F82261 /* SearchView.swift in Sources */,
 				29A9BE9C2A61CFEF00F82261 /* ThreadCell.swift in Sources */,
+				29A9BEA92A62F55900F82261 /* User.swift in Sources */,
 				29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */,
 				29A273FB2A5C0A2B0001CDBD /* MainTabView.swift in Sources */,
 				29A9BEA52A62C26700F82261 /* RegistrationView.swift in Sources */,
