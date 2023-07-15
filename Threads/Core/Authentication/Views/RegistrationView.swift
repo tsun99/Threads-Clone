@@ -27,7 +27,6 @@ struct RegistrationView: View {
                 .scaledToFit()
                 .frame(width: 50)
                 .foregroundColor(.primary)
-                .padding()
             
             Text("Create a new account")
                 .font(.title2)
@@ -58,7 +57,6 @@ struct RegistrationView: View {
                 Divider()
                 
                 TextField("Full Name", text: $fullNameField)
-                    .autocapitalization(.none)
                     .font(.subheadline)
                     .padding(14)
                     .background(Color(.systemGray5))
@@ -68,13 +66,13 @@ struct RegistrationView: View {
                 Divider()
                 
                 SecureField("Password", text: $passwordField)
-                    .autocapitalization(.none)
                     .font(.subheadline)
                     .padding(14)
                     .background(Color(.systemGray5))
                     .cornerRadius(14)
                     .padding(.horizontal, 24)
                 
+                Divider()
             }
             
             Spacer()
@@ -82,6 +80,7 @@ struct RegistrationView: View {
             
             NavigationLink {
                 CompleteRegistrationView()
+                    .navigationBarBackButtonHidden()
             } label: {
                 Text("Sign up")
                     .font(.headline)

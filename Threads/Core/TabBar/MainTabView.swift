@@ -22,7 +22,7 @@ struct MainTabView: View {
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                 }
-            LoginView()
+            RegistrationView()
                 .tabItem {
                     Image(systemName: "heart")
                 }
