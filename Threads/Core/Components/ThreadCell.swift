@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ThreadCell: View {
+    let thread: Thread
+    
     var body: some View {
         HStack {
+            
             VStack {
-                Image("Harry")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60)
-                    .clipShape(Circle())
+                if let user = thread.user {
+                    
+                    Image(user.profileImageUrl ?? "")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60)
+                        .clipShape(Circle())
+                    
+                }
                 
                 Rectangle()
                     .frame(width: 2)
@@ -23,7 +30,7 @@ struct ThreadCell: View {
                     .foregroundColor(.secondary)
                 
                 ZStack{
-                    
+//                    TODO:: CHANGE THESE TO PICTURES OF USERS THAT REPLIED
                     Image("Harry")
                         .resizable()
                         .scaledToFit()
@@ -44,12 +51,15 @@ struct ThreadCell: View {
                         .offset(x: 15, y: 5)
                 }
             }
-            .padding(.leading)
+            .padding(8)
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Text("User Name")
-                        .font(.headline)
+                    if let user = thread.user {
+                        
+                        Text(user.username)
+                            .font(.headline)
+                    }
                     
                     Spacer()
                     
@@ -65,12 +75,14 @@ struct ThreadCell: View {
                 }
                 
                 
-                Text("This is the thread text. it might be long it might not be long. So if I'm writing more text ")
+                Text(thread.text ?? "")
                   
-                
-                Image("Harry")
-                    .resizable()
-                    .scaledToFit()
+                if let threadImage = thread.imageUrl {
+                    
+                    Image(threadImage)
+                        .resizable()
+                        .scaledToFit()
+                }
                 
                 HStack {
                     Button {
@@ -97,11 +109,10 @@ struct ThreadCell: View {
                 }
                 .foregroundColor(.primary)
                 
-                Spacer()
                 
                 HStack {
-                    Text("10 replies")
-                    Text("42 likes")
+                    Text("\(thread.replies) replies")
+                    Text("\(thread.likes) likes")
                 }
                 .foregroundColor(.secondary)
 
@@ -117,6 +128,6 @@ struct ThreadCell: View {
 
 struct ThreadCell_Previews: PreviewProvider {
     static var previews: some View {
-        ThreadCell()
+        ThreadCell(thread: Thread.MOCK_THREADS[0])
     }
 }

@@ -9,9 +9,15 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    var user: User
+    
     @State private var selectedFilter: ThreadFilterViewModel = .threads
     
     @Namespace var animation
+    
+    var threads: [Thread] {
+        return Thread.MOCK_THREADS.filter( { $0.user?.username == user.username})
+    }
     
     var body: some View {
         ScrollView {
@@ -21,30 +27,33 @@ struct ProfileView: View {
                 //Profile info
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Full Name")
+                        Text(user.fullname)
                             .foregroundColor(.primary)
                             .font(.title)
                             .bold()
                         
-                        Text("User Name")
+                        Text(user.username)
                             .font(.subheadline)
                     }
                     Spacer()
                     
-                    Image("Harry")
+                    Image(user.profileImageUrl ?? "")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 80, height: 80)
                         .clipShape(Circle())
                 }
                 
-                Text("Bio")
+                if let bio = user.bio {
+                    Text(bio)
+                    
+                }
                 
-                Text("0 Followers")
+                Text("\(user.followers) Followers")
                     .foregroundColor(.secondary)
                     .padding(.vertical, 5)
                 
-                Button("Edit Profile") {
+                Button("Follow") {
                     //Edit Profile
                 }
                 .font(.subheadline)
@@ -85,22 +94,19 @@ struct ProfileView: View {
             LazyVStack {
                 //Threads
                 
+                ForEach(threads) { thread in
+                    ThreadCell(thread: thread)
+                }
+                
             }
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "lock")
-                }
-                .foregroundColor(.primary)
-            }
+            
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     
                 } label : {
-                    Image(systemName: "line.3.horizontal.decrease")
+                    Image(systemName: "ellipsis.circle")
                 }
                 .foregroundColor(.primary)
             }
@@ -111,6 +117,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: User.MOCK_USERS[0])
     }
 }

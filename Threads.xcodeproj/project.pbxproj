@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		299263462A62FCEF004BF130 /* MainUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263452A62FCEF004BF130 /* MainUserProfileView.swift */; };
+		299263482A6304CF004BF130 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263472A6304CF004BF130 /* Thread.swift */; };
 		29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */; };
 		29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273E12A5C05DE0001CDBD /* ContentView.swift */; };
 		29A273E42A5C05E10001CDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A273E32A5C05E10001CDBD /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		299263452A62FCEF004BF130 /* MainUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserProfileView.swift; sourceTree = "<group>"; };
+		299263472A6304CF004BF130 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		29A273DC2A5C05DE0001CDBD /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsApp.swift; sourceTree = "<group>"; };
 		29A273E12A5C05DE0001CDBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				29A9BEA82A62F55900F82261 /* User.swift */,
+				299263472A6304CF004BF130 /* Thread.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				29A9BE9A2A61C3A500F82261 /* ThreadFilterViewModel.swift in Sources */,
 				29A9BEA72A62C8CD00F82261 /* CompleteRegistrationView.swift in Sources */,
 				29A273FD2A5C0D300001CDBD /* ProfileView.swift in Sources */,
+				299263482A6304CF004BF130 /* Thread.swift in Sources */,
 				29A9BEA32A62AC2800F82261 /* LoginView.swift in Sources */,
 				29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */,
 				29A9BEA02A62A1AD00F82261 /* SearchView.swift in Sources */,
