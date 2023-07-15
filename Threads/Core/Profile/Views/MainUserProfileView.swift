@@ -13,6 +13,12 @@ struct MainUserProfileView: View {
     
     @Namespace var animation
     
+    var user: User
+    
+    var threads: [Thread] {
+        return Thread.MOCK_THREADS.filter( { $0.user?.username == user.username})
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -85,7 +91,9 @@ struct MainUserProfileView: View {
                 
                 LazyVStack {
                     //Threads
-                    
+                    ForEach(threads) { thread in
+                        ThreadCell(thread: thread)
+                    }
                 }
             }
             .toolbar {
@@ -112,6 +120,6 @@ struct MainUserProfileView: View {
 
 struct MainUserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        MainUserProfileView()
+        MainUserProfileView(user: User.MOCK_USERS[0])
     }
 }

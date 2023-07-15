@@ -15,13 +15,15 @@ struct ThreadCell: View {
             
             VStack {
                 if let user = thread.user {
-                    
-                    Image(user.profileImageUrl ?? "")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 60)
-                        .clipShape(Circle())
-                    
+                    if let profileImage = user.profileImageUrl {
+                        
+                        Image(profileImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 60)
+                            .clipShape(Circle())
+                        
+                    }
                 }
                 
                 Rectangle()
