@@ -1,0 +1,112 @@
+//
+//  RegistrationView.swift
+//  Threads
+//
+//  Created by Tomas Sungaila on 7/15/23.
+//
+
+import SwiftUI
+
+struct RegistrationView: View {
+    
+    @State private var emailField = ""
+    @State private var usernameField = ""
+    @State private var fullNameField = ""
+    @State private var passwordField = ""
+    
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        VStack {
+            Image("ThreadsLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50)
+                .foregroundColor(.primary)
+                .padding()
+            
+            Text("Create a new account")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .padding(.vertical, 40)
+            
+            VStack {
+                
+                TextField("Email", text: $emailField)
+                    .autocapitalization(.none)
+                    .font(.subheadline)
+                    .padding(14)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(14)
+                    .padding(.horizontal, 24)
+                
+                Divider()
+                
+                
+                TextField("Username", text: $usernameField)
+                    .autocapitalization(.none)
+                    .font(.subheadline)
+                    .padding(14)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(14)
+                    .padding(.horizontal, 24)
+                
+                Divider()
+                
+                TextField("Full Name", text: $fullNameField)
+                    .autocapitalization(.none)
+                    .font(.subheadline)
+                    .padding(14)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(14)
+                    .padding(.horizontal, 24)
+                
+                Divider()
+                
+                SecureField("Password", text: $passwordField)
+                    .autocapitalization(.none)
+                    .font(.subheadline)
+                    .padding(14)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(14)
+                    .padding(.horizontal, 24)
+                
+            }
+            
+            Spacer()
+            
+            
+            NavigationLink {
+                CompleteRegistrationView()
+            } label: {
+                Text("Sign up")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                    .frame(width: 330, height: 50)
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [.purple, .pink, .red, .yellow]), startPoint: .leading, endPoint: .trailing))
+                    .clipShape(RoundedRectangle(cornerRadius: 22))
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "arrowshape.left")
+                    .imageScale(.large)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            }
+        }
+        
+    }
+}
+
+struct RegistrationView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            RegistrationView()
+            
+        }
+    }
+}
