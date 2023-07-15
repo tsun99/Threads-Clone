@@ -16,6 +16,10 @@ struct RegistrationView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    private var isDisabled: Bool {
+        return emailField.isEmpty || passwordField.isEmpty || usernameField.isEmpty
+    }
+    
     var body: some View {
         VStack {
             Image("ThreadsLogo")
@@ -87,7 +91,9 @@ struct RegistrationView: View {
                     .background(
                         LinearGradient(gradient: Gradient(colors: [.purple, .pink, .red, .yellow]), startPoint: .leading, endPoint: .trailing))
                     .clipShape(RoundedRectangle(cornerRadius: 22))
+                    .opacity(isDisabled ? 0.5 : 1)
             }
+            .disabled(isDisabled)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
