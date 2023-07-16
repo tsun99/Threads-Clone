@@ -16,6 +16,8 @@
 		299263532A641337004BF130 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 299263522A641337004BF130 /* FirebaseFirestore */; };
 		299263552A641337004BF130 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 299263542A641337004BF130 /* FirebaseFirestoreSwift */; };
 		299263572A641337004BF130 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 299263562A641337004BF130 /* FirebaseStorage */; };
+		2992635A2A641C27004BF130 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263592A641C27004BF130 /* AuthService.swift */; };
+		2992635E2A641DCF004BF130 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992635D2A641DCF004BF130 /* ContentViewModel.swift */; };
 		29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */; };
 		29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273E12A5C05DE0001CDBD /* ContentView.swift */; };
 		29A273E42A5C05E10001CDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A273E32A5C05E10001CDBD /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		299263492A6323C3004BF130 /* NewThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThreadView.swift; sourceTree = "<group>"; };
 		2992634B2A6407A8004BF130 /* NewThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThreadViewModel.swift; sourceTree = "<group>"; };
 		2992634D2A6412A9004BF130 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		299263592A641C27004BF130 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		2992635D2A641DCF004BF130 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		29A273DC2A5C05DE0001CDBD /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsApp.swift; sourceTree = "<group>"; };
 		29A273E12A5C05DE0001CDBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		299263582A641C0C004BF130 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				299263592A641C27004BF130 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2992635B2A641DA9004BF130 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				29A273E12A5C05DE0001CDBD /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2992635C2A641DBD004BF130 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2992635D2A641DCF004BF130 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		29A273D32A5C05DE0001CDBD = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +122,6 @@
 				29A273EE2A5C08740001CDBD /* Extensions */,
 				29A273ED2A5C086B0001CDBD /* Model */,
 				29A273F22A5C08EA0001CDBD /* Services */,
-				29A273E12A5C05DE0001CDBD /* ContentView.swift */,
 				2992634D2A6412A9004BF130 /* GoogleService-Info.plist */,
 				29A273E32A5C05E10001CDBD /* Assets.xcassets */,
 				29A273E52A5C05E10001CDBD /* Preview Content */,
@@ -159,6 +186,7 @@
 		29A273F32A5C092B0001CDBD /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				299263582A641C0C004BF130 /* Service */,
 				29A9BEA12A62AAB500F82261 /* Views */,
 			);
 			path = Authentication;
@@ -184,6 +212,8 @@
 		29A273F62A5C094D0001CDBD /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				2992635C2A641DBD004BF130 /* ViewModel */,
+				2992635B2A641DA9004BF130 /* Views */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -342,6 +372,8 @@
 				29A9BE9C2A61CFEF00F82261 /* ThreadCell.swift in Sources */,
 				29A9BEA92A62F55900F82261 /* User.swift in Sources */,
 				29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */,
+				2992635E2A641DCF004BF130 /* ContentViewModel.swift in Sources */,
+				2992635A2A641C27004BF130 /* AuthService.swift in Sources */,
 				29A273FB2A5C0A2B0001CDBD /* MainTabView.swift in Sources */,
 				29A9BEA52A62C26700F82261 /* RegistrationView.swift in Sources */,
 			);
