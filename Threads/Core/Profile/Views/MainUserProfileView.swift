@@ -124,7 +124,7 @@ struct MainUserProfileView: View {
             }
         }
         .sheet(isPresented: $showingEditProfile) {
-            EditProfileView()
+            EditProfileView(user: user)
         }
     }
 }
