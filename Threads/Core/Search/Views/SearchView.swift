@@ -12,12 +12,14 @@ struct SearchView: View {
     
     @State private var searchText = ""
     
+    @StateObject var viewModel = SearchViewModel()
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
                     
-                    ForEach(User.MOCK_USERS) { user in
+                    ForEach(viewModel.users) { user in
                         VStack {
                             NavigationLink(value: user) {
                                 

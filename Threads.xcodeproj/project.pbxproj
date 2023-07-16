@@ -20,6 +20,8 @@
 		299263612A64206F004BF130 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263602A64206F004BF130 /* RegistrationViewModel.swift */; };
 		299263632A643B6E004BF130 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299263622A643B6E004BF130 /* GoogleService-Info.plist */; };
 		299263652A643CBD004BF130 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263642A643CBD004BF130 /* LoginViewModel.swift */; };
+		299263672A644A79004BF130 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263662A644A79004BF130 /* UserService.swift */; };
+		2992636B2A644B5C004BF130 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992636A2A644B5C004BF130 /* SearchViewModel.swift */; };
 		29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */; };
 		29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273E12A5C05DE0001CDBD /* ContentView.swift */; };
 		29A273E42A5C05E10001CDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A273E32A5C05E10001CDBD /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		299263602A64206F004BF130 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		299263622A643B6E004BF130 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		299263642A643CBD004BF130 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		299263662A644A79004BF130 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		2992636A2A644B5C004BF130 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		29A273DC2A5C05DE0001CDBD /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsApp.swift; sourceTree = "<group>"; };
 		29A273E12A5C05DE0001CDBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,22 @@
 			children = (
 				299263602A64206F004BF130 /* RegistrationViewModel.swift */,
 				299263642A643CBD004BF130 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		299263682A644B3D004BF130 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				29A9BE9F2A62A1AD00F82261 /* SearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		299263692A644B45004BF130 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2992636A2A644B5C004BF130 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,6 +212,7 @@
 		29A273F22A5C08EA0001CDBD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				299263662A644A79004BF130 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -235,7 +256,8 @@
 		29A273F72A5C09520001CDBD /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				29A9BE9F2A62A1AD00F82261 /* SearchView.swift */,
+				299263682A644B3D004BF130 /* Views */,
+				299263692A644B45004BF130 /* ViewModel */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -372,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2992636B2A644B5C004BF130 /* SearchViewModel.swift in Sources */,
 				299263462A62FCEF004BF130 /* MainUserProfileView.swift in Sources */,
 				2992634C2A6407A8004BF130 /* NewThreadViewModel.swift in Sources */,
 				29A9BE9E2A61E35C00F82261 /* FeedView.swift in Sources */,
@@ -386,6 +409,7 @@
 				29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */,
 				29A9BEA02A62A1AD00F82261 /* SearchView.swift in Sources */,
 				29A9BE9C2A61CFEF00F82261 /* ThreadCell.swift in Sources */,
+				299263672A644A79004BF130 /* UserService.swift in Sources */,
 				29A9BEA92A62F55900F82261 /* User.swift in Sources */,
 				29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */,
 				2992635E2A641DCF004BF130 /* ContentViewModel.swift in Sources */,

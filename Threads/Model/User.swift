@@ -11,7 +11,7 @@ struct User: Identifiable, Codable, Hashable {
     
     let id: String
     let email: String
-    var username: String
+    let username: String
     var fullname: String
     var followers: Int = 0
     
