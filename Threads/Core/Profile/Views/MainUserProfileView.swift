@@ -107,7 +107,7 @@ struct MainUserProfileView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
+                        AuthService.shared.signout()
                     } label : {
                         Image(systemName: "line.3.horizontal.decrease")
                     }
