@@ -15,12 +15,15 @@ struct NewThreadView: View {
     @State private var threadText = ""
     
     @State private var imagePickerPresented = false
-    @State private var photoItem: PhotosPickerItem?
+    @StateObject var viewModel = NewThreadViewModel()
     
     var body: some View {
         VStack {
             HStack {
                 Button("Cancel") {
+                    threadText = ""
+                    viewModel.userImage = nil
+                    viewModel.selectedImage = nil
                     dismiss()
                 }
                 Spacer()
@@ -30,9 +33,13 @@ struct NewThreadView: View {
                     .padding(.horizontal, 32)
                 
                 Spacer()
-                Spacer()
+                
+                Button("Post") {
+                    
+                }
             }
             .padding()
+            
             HStack {
                 VStack {
                             
@@ -62,10 +69,10 @@ struct NewThreadView: View {
                     Text("User Name")
                         .font(.headline)
                         .padding(.top, 24)
-    
+                    
                     
                     TextField("Start a thread...", text: $threadText, axis: .vertical)
-                                    .lineLimit(25)
+                        .lineLimit(25)
                     
                     Button {
                         imagePickerPresented.toggle()
@@ -74,11 +81,21 @@ struct NewThreadView: View {
                     }
                     .foregroundColor(.primary)
                     .imageScale(.large)
+                    
+                    VStack(spacing: 12) {
+                        
+                        if let image = viewModel.userImage {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: .infinity)
+                    }
+                    }
                     Spacer()
                 }
             }
         }
-        .photosPicker(isPresented: $imagePickerPresented, selection: $photoItem)
+        .photosPicker(isPresented: $imagePickerPresented, selection: $viewModel.selectedImage)
     }
 }
 

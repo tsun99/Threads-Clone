@@ -20,21 +20,25 @@ struct MainTabView: View {
                     Image(systemName: "house")
                 }
                 .tag(1)
+            
             SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
                 .tag(2)
+            
             Text("")
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                 }
                 .tag(3)
+            
             RegistrationView()
                 .tabItem {
                     Image(systemName: "heart")
                 }
                 .tag(4)
+            
             MainUserProfileView(user: User.MOCK_USERS[0])
                 .tabItem {
                     Image(systemName: "person")
