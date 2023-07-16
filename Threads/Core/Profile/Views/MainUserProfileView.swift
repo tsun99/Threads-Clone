@@ -40,17 +40,7 @@ struct MainUserProfileView: View {
                         }
                         Spacer()
                         
-                        if let image = user.profileImageUrl {
-                            
-                            Image(image)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 80, height: 80)
-                                .clipShape(Circle())
-                        } else {
-                            Circle()
-                                .frame(width: 80, height: 80)
-                        }
+                        CircularProfileImageView(user: user, size: .profile)
                     }
                     
                     Text(user.bio ?? "")

@@ -15,15 +15,7 @@ struct ThreadCell: View {
             
             VStack {
                 if let user = thread.user {
-                    if let profileImage = user.profileImageUrl {
-                        
-                        Image(profileImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 60)
-                            .clipShape(Circle())
-                        
-                    }
+                    CircularProfileImageView(user: user, size: .thread)
                 }
                 
                 Rectangle()

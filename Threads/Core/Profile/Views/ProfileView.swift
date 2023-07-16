@@ -37,18 +37,7 @@ struct ProfileView: View {
                     }
                     Spacer()
                     
-                    if let image = user.profileImageUrl {
-                        
-                        Image(image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
-                    } else {
-                        Circle()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.white)
-                    }
+                    CircularProfileImageView(user: user, size: .profile)
                 }
                 
                 if let bio = user.bio {
