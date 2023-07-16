@@ -73,6 +73,7 @@ struct LoginView: View {
                 NavigationLink {
                     RegistrationView()
                         .navigationBarBackButtonHidden(true)
+                        
                 } label: {
                     Text("Dont have an account? ") + Text("Sign up")
                         .fontWeight(.bold)

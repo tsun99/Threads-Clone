@@ -9,15 +9,11 @@ import SwiftUI
 
 struct RegistrationView: View {
     
-    @State private var emailField = ""
-    @State private var usernameField = ""
-    @State private var fullNameField = ""
-    @State private var passwordField = ""
-    
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: RegistrationViewModel
     
     private var isDisabled: Bool {
-        return emailField.isEmpty || passwordField.isEmpty || usernameField.isEmpty || fullNameField.isEmpty
+        return viewModel.email.isEmpty || viewModel.password.isEmpty || viewModel.username.isEmpty || viewModel.fullname.isEmpty
     }
     
     var body: some View {
@@ -35,42 +31,46 @@ struct RegistrationView: View {
             
             VStack {
                 
-                TextField("Email", text: $emailField)
+                TextField("Email", text: $viewModel.email)
                     .autocapitalization(.none)
                     .font(.subheadline)
                     .padding(14)
                     .background(Color(.systemGray5))
                     .cornerRadius(14)
                     .padding(.horizontal, 24)
+                    .autocorrectionDisabled()
                 
                 Divider()
                 
                 
-                TextField("Username", text: $usernameField)
+                TextField("Username", text: $viewModel.username)
                     .autocapitalization(.none)
                     .font(.subheadline)
                     .padding(14)
                     .background(Color(.systemGray5))
                     .cornerRadius(14)
                     .padding(.horizontal, 24)
+                    .autocorrectionDisabled()
                 
                 Divider()
                 
-                TextField("Full Name", text: $fullNameField)
+                TextField("Full Name", text: $viewModel.fullname)
                     .font(.subheadline)
                     .padding(14)
                     .background(Color(.systemGray5))
                     .cornerRadius(14)
                     .padding(.horizontal, 24)
+                    .autocorrectionDisabled()
                 
                 Divider()
                 
-                SecureField("Password", text: $passwordField)
+                SecureField("Password", text: $viewModel.password)
                     .font(.subheadline)
                     .padding(14)
                     .background(Color(.systemGray5))
                     .cornerRadius(14)
                     .padding(.horizontal, 24)
+                    .autocorrectionDisabled()
                 
                 Divider()
             }
@@ -93,6 +93,7 @@ struct RegistrationView: View {
                     .opacity(isDisabled ? 0.5 : 1)
             }
             .disabled(isDisabled)
+            
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
