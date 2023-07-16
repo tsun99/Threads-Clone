@@ -28,26 +28,32 @@ struct MainUserProfileView: View {
                 //Profile info
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("Full Name")
+                            Text(user.fullname)
                                 .foregroundColor(.primary)
                                 .font(.title)
                                 .bold()
                             
-                            Text("User Name")
+                            Text(user.username)
                                 .font(.subheadline)
                         }
                         Spacer()
                         
-                        Image("Harry")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
+                        if let image = user.profileImageUrl {
+                            
+                            Image(image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                        } else {
+                            Circle()
+                                .frame(width: 80, height: 80)
+                        }
                     }
                     
-                    Text("Bio")
+                    Text(user.bio ?? "")
                     
-                    Text("0 Followers")
+                    Text("\(user.followers) Followers")
                         .foregroundColor(.secondary)
                         .padding(.vertical, 5)
                     
