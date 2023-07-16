@@ -11,12 +11,6 @@ Threads Clone is a SwiftUI iOS application that serves as a clone of Threads by 
 - User profiles with customizable information
 - Browsing and searching other user profiles
 
-## Requirements
-
-- iOS 14.0+
-- Xcode 13.0+
-- Swift 5.5
-
 ## Installation
 
 To clone and run the Threads Clone application, follow these steps:
