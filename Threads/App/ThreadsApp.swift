@@ -24,7 +24,11 @@ struct ThreadsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            
+            if 1 == 1 {
+                MainTabView()
+                
+            }
         }
     }
 }
