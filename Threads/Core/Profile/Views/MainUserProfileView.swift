@@ -11,6 +11,8 @@ struct MainUserProfileView: View {
     
     @State private var selectedFilter: ThreadFilterViewModel = .threads
     
+    @State private var showingEditProfile = false
+    
     @Namespace var animation
     
     var user: User
@@ -58,7 +60,7 @@ struct MainUserProfileView: View {
                         .padding(.vertical, 5)
                     
                     Button("Edit Profile") {
-                        //Edit Profile
+                        showingEditProfile.toggle()
                     }
                     .font(.subheadline)
                     .fontWeight(.semibold)
@@ -120,6 +122,9 @@ struct MainUserProfileView: View {
                     .foregroundColor(.primary)
                 }
             }
+        }
+        .sheet(isPresented: $showingEditProfile) {
+            EditProfileView()
         }
     }
 }
