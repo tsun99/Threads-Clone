@@ -13,10 +13,10 @@ Threads Clone is a SwiftUI iOS application that serves as a clone of Threads by 
 
 ## Demo
 
-# Demo Video
+### Demo Video
 https://youtu.be/R9zESFE9tfI
 
-# Demo Images
+### Demo Images
 <img width="442" alt="HP SC" src="https://github.com/tsun99/Threads-Clone/assets/49662627/e2246e95-b484-451f-a2a2-94ec2e14450e">
 <img width="442" alt="RW SC" src="https://github.com/tsun99/Threads-Clone/assets/49662627/db4603b3-da93-46a7-a68a-f29e9df16651">
 
