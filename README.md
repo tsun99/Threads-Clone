@@ -9,7 +9,11 @@ Threads Clone is a SwiftUI iOS application that serves as a clone of Threads by 
 - User authentication using Firebase Authentication
 - Posting new threads with images
 - User profiles with customizable information
-- Browsing and searching other user profiles
+- Browsing other user profiles
+
+## Demo
+
+https://youtu.be/R9zESFE9tfI
 
 ## Installation
 
