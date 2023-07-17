@@ -17,6 +17,8 @@ struct NewThreadView: View {
     @State private var imagePickerPresented = false
     @StateObject var viewModel = NewThreadViewModel()
     
+    let user: User
+    
     var body: some View {
         VStack {
             HStack {
@@ -35,7 +37,10 @@ struct NewThreadView: View {
                 Spacer()
                 
                 Button("Post") {
-                    
+                    Task {
+                        try await viewModel.uploadThread(text: threadText)
+                        clearThreadDataAndReturn()
+                    }
                 }
             }
             .padding()
@@ -43,11 +48,7 @@ struct NewThreadView: View {
             HStack {
                 VStack {
                             
-                    Image("Harry")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 60)
-                        .clipShape(Circle())
+                    CircularProfileImageView(user: user, size: .thread)
                         
                     
                     Rectangle()
@@ -56,23 +57,20 @@ struct NewThreadView: View {
                         .foregroundColor(.secondary)
                     
                 
-                        Image("Harry")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30)
-                            .clipShape(Circle())
+                    CircularProfileImageView(user: user, size: .reply3)
                             .opacity(0.5)
                 }
                 .padding(8)
                 
                 VStack(alignment: .leading) {
-                    Text("User Name")
+                    Text(user.username)
                         .font(.headline)
                         .padding(.top, 24)
                     
                     
                     TextField("Start a thread...", text: $threadText, axis: .vertical)
                         .lineLimit(25)
+                        .autocorrectionDisabled()
                     
                     Button {
                         imagePickerPresented.toggle()
@@ -97,10 +95,17 @@ struct NewThreadView: View {
         }
         .photosPicker(isPresented: $imagePickerPresented, selection: $viewModel.selectedImage)
     }
+    
+    func clearThreadDataAndReturn() {
+        threadText = ""
+        viewModel.userImage = nil
+        viewModel.selectedImage = nil
+        dismiss()
+    }
 }
 
 struct NewThreadView_Previews: PreviewProvider {
     static var previews: some View {
-        NewThreadView()
+        NewThreadView(user: User.MOCK_USERS[0])
     }
 }

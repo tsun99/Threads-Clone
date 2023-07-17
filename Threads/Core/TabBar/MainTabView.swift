@@ -57,7 +57,7 @@ struct MainTabView: View {
             }
         }
         .sheet(isPresented: $showingNewPostView) {
-            NewThreadView()
+            NewThreadView(user: user)
         }
     }
 }
