@@ -28,6 +28,8 @@
 		299263742A646B84004BF130 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 299263732A646B84004BF130 /* Kingfisher */; };
 		299263762A646BE0004BF130 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299263752A646BE0004BF130 /* CircularProfileImageView.swift */; };
 		2992637C2A653FCE004BF130 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992637B2A653FCE004BF130 /* FeedViewModel.swift */; };
+		2992637E2A65478B004BF130 /* ThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992637D2A65478B004BF130 /* ThreadService.swift */; };
+		299263802A6549F8004BF130 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992637F2A6549F8004BF130 /* ProfileViewModel.swift */; };
 		29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */; };
 		29A273E22A5C05DE0001CDBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A273E12A5C05DE0001CDBD /* ContentView.swift */; };
 		29A273E42A5C05E10001CDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A273E32A5C05E10001CDBD /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		299263702A64610C004BF130 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		299263752A646BE0004BF130 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		2992637B2A653FCE004BF130 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		2992637D2A65478B004BF130 /* ThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadService.swift; sourceTree = "<group>"; };
+		2992637F2A6549F8004BF130 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		29A273DC2A5C05DE0001CDBD /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A273DF2A5C05DE0001CDBD /* ThreadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsApp.swift; sourceTree = "<group>"; };
 		29A273E12A5C05DE0001CDBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 			children = (
 				299263662A644A79004BF130 /* UserService.swift */,
 				299263702A64610C004BF130 /* ImageUploader.swift */,
+				2992637D2A65478B004BF130 /* ThreadService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			children = (
 				29A9BE992A61C3A500F82261 /* ThreadFilterViewModel.swift */,
 				2992636E2A645964004BF130 /* EditProfileViewModel.swift */,
+				2992637F2A6549F8004BF130 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 			files = (
 				2992636F2A645964004BF130 /* EditProfileViewModel.swift in Sources */,
 				2992636B2A644B5C004BF130 /* SearchViewModel.swift in Sources */,
+				299263802A6549F8004BF130 /* ProfileViewModel.swift in Sources */,
 				299263712A64610C004BF130 /* ImageUploader.swift in Sources */,
 				299263462A62FCEF004BF130 /* MainUserProfileView.swift in Sources */,
 				2992634C2A6407A8004BF130 /* NewThreadViewModel.swift in Sources */,
@@ -468,6 +475,7 @@
 				29A9BEA92A62F55900F82261 /* User.swift in Sources */,
 				29A273E02A5C05DE0001CDBD /* ThreadsApp.swift in Sources */,
 				2992636D2A6454D1004BF130 /* EditProfileView.swift in Sources */,
+				2992637E2A65478B004BF130 /* ThreadService.swift in Sources */,
 				2992635E2A641DCF004BF130 /* ContentViewModel.swift in Sources */,
 				2992635A2A641C27004BF130 /* AuthService.swift in Sources */,
 				29A273FB2A5C0A2B0001CDBD /* MainTabView.swift in Sources */,

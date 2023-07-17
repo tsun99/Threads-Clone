@@ -15,9 +15,16 @@ struct ProfileView: View {
     
     @Namespace var animation
     
-    var threads: [Thread] {
-        return Thread.MOCK_THREADS.filter( { $0.user?.username == user.username})
+    @StateObject var viewModel: ProfileViewModel
+    
+    init(user: User) {
+        self._viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
+        self.user = user
     }
+    
+//    var threads: [Thread] {
+//        return Thread.MOCK_THREADS.filter( { $0.user?.username == user.username})
+//    }
     
     var body: some View {
         ScrollView {
@@ -90,7 +97,7 @@ struct ProfileView: View {
             LazyVStack {
                 //Threads
                 
-                ForEach(threads) { thread in
+                ForEach(viewModel.threads) { thread in
                     ThreadCell(thread: thread)
                 }
                 
