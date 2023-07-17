@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
 struct FeedView: View {
+    
+    @StateObject var viewModel = FeedViewModel()
     
     var body: some View {
         NavigationStack {
@@ -21,7 +24,7 @@ struct FeedView: View {
                 
                 LazyVStack() {
                     
-                    ForEach(Thread.MOCK_THREADS) { thread in
+                    ForEach(viewModel.threads) { thread in
                         ThreadCell(thread: thread)
                             .padding(.bottom, 24)
                         

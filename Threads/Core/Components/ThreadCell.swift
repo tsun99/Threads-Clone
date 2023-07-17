@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ThreadCell: View {
     let thread: Thread
@@ -73,7 +74,7 @@ struct ThreadCell: View {
                   
                 if let threadImage = thread.imageUrl {
                     
-                    Image(threadImage)
+                    KFImage(URL(string: threadImage))
                         .resizable()
                         .scaledToFit()
                 }
